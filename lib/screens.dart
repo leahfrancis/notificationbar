@@ -7,41 +7,43 @@ class MyBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(30),
-          topLeft: Radius.circular(30),
-        ),
-        boxShadow: [
-          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
-        ],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30.0),
-          topRight: Radius.circular(30.0),
-        ),
-        child: BottomNavigationBar(
-          onTap: onTap,
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/logo4.png', width: 34, height: 34),
-              label: 'item 1',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/logo2.png', width: 34, height: 34),
-              label: 'item 2',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/logo3.png', width: 34, height: 34),
-              label: 'item 3',
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset('assets/logo1.png', width: 34, height: 34),
-              label: 'item 4',
+    return Padding(
+      padding: EdgeInsets.only(bottom: 16), // Adjust the padding as needed
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.8),
+              blurRadius: 10,
+              offset: Offset(0, 1), // Adjust the offset for desired perspective
             ),
           ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: BottomNavigationBar(
+            onTap: onTap,
+            backgroundColor: Colors.transparent,
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/logo4.png', width: 34, height: 34),
+                label: 'item 1',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/logo2.png', width: 34, height: 34),
+                label: 'item 2',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/logo3.png', width: 34, height: 34),
+                label: 'item 3',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset('assets/logo1.png', width: 34, height: 34),
+                label: 'item 4',
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -66,13 +68,15 @@ Widget buildScreen(int index) {
 class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
-      child: Center(
-        child: Text(
-          'Page 1',
-          style: TextStyle(color: Colors.white, fontSize: 24),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          for (int i = 0; i < 50; i++)
+            ListTile(
+              title: Text('Item $i'),
+            ),
+        ],
       ),
     );
   }
@@ -81,13 +85,15 @@ class Page1 extends StatelessWidget {
 class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
-      child: Center(
-        child: Text(
-          'Page 2',
-          style: TextStyle(color: Colors.white, fontSize: 24),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          for (int i = 0; i < 50; i++)
+            ListTile(
+              title: Text('Item $i'),
+            ),
+        ],
       ),
     );
   }
@@ -96,13 +102,15 @@ class Page2 extends StatelessWidget {
 class Page3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      child: Center(
-        child: Text(
-          'Page 3',
-          style: TextStyle(color: Colors.white, fontSize: 24),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          for (int i = 0; i < 50; i++)
+            ListTile(
+              title: Text('Item $i'),
+            ),
+        ],
       ),
     );
   }
@@ -111,13 +119,15 @@ class Page3 extends StatelessWidget {
 class Page4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
-      child: Center(
-        child: Text(
-          'Page 4',
-          style: TextStyle(color: Colors.white, fontSize: 24),
-        ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: ListView(
+        children: [
+          for (int i = 0; i < 50; i++)
+            ListTile(
+              title: Text('Item $i'),
+            ),
+        ],
       ),
     );
   }

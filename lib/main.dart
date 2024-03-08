@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Bottom Navigation Example',
+      title: 'demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -24,7 +24,6 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     
       body: ValueListenableBuilder<int>(
         valueListenable: _selectedIndex,
         builder: (context, index, _) => buildScreen(index),
