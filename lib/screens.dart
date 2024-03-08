@@ -7,26 +7,43 @@ class MyBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      onTap: onTap,
-      items: [
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/logo4.png', width: 34, height: 34),
-          label: 'item 1',
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(30),
+          topLeft: Radius.circular(30),
         ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/logo2.png', width: 34, height: 34),
-          label: 'item 2',
+        boxShadow: [
+          BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
         ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/logo3.png', width: 34, height: 34),
-          label: 'item 3',
+        child: BottomNavigationBar(
+          onTap: onTap,
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/logo4.png', width: 34, height: 34),
+              label: 'item 1',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/logo2.png', width: 34, height: 34),
+              label: 'item 2',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/logo3.png', width: 34, height: 34),
+              label: 'item 3',
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/logo1.png', width: 34, height: 34),
+              label: 'item 4',
+            ),
+          ],
         ),
-        BottomNavigationBarItem(
-          icon: Image.asset('assets/logo1.png', width: 34, height: 34),
-          label: 'item 4',
-        ),
-      ],
+      ),
     );
   }
 }
@@ -42,7 +59,7 @@ Widget buildScreen(int index) {
     case 3:
       return Page4();
     default:
-      return Container(); 
+      return Container();
   }
 }
 

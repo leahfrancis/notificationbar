@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'screens.dart';
 
 void main() {
@@ -10,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'demo',
+      title: 'Flutter Bottom Navigation Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -20,18 +19,21 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-   final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);@override
+  final ValueNotifier<int> _selectedIndex = ValueNotifier<int>(0);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-        body: ValueListenableBuilder<int>(
+     
+      body: ValueListenableBuilder<int>(
         valueListenable: _selectedIndex,
         builder: (context, index, _) => buildScreen(index),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(onTap:(index)
-      {
-        _selectedIndex.value = index;
-      }),
+      bottomNavigationBar: MyBottomNavigationBar(
+        onTap: (index) {
+          _selectedIndex.value = index;
+        },
+      ),
     );
   }
 }
